@@ -1,6 +1,10 @@
 
 
-.carts-view{
+.carts-view,
+.recommended-students-for-business,
+.recommended-investors-for-business,
+.recommended-businesses-for-investor,
+.recommended-businesses-for-student{
 display: flex;
 
 

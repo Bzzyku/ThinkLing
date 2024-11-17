@@ -1,27 +1,253 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      business-page
-    </title>
+    <title>Business Page</title>
     <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/pages/student-page.css">
+    <style>
+      /* Inline styling for demonstration, move to your CSS file */
+      .business-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Add spacing between items */
+      }
+      .business-inline h2, .business-inline p {
+        margin: 0;
+      }
+      .business-item {
+        margin-bottom: 10px;
+      }
+      .business-description {
+        margin-top: 20px;
+      }
+      .business-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Add spacing between items */
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="header">
       <div class="logo">
         <a href="home-page.html">
-          <image class="logo-image" src="images/logo.jpg"></image>
+          <img class="logo-image" src="images/logo.jpg" alt="ThinkLink Logo">
         </a>
       </div>
       <div class="name">
         ThinkLink
       </div>
       <div class="notifications">
-        <img src="images/notifications.svg">
+        <img src="images/notifications.svg" alt="Notifications">
       </div>
     </div>
-    <h1>
-      Business
-    </h1>
+    <h1>O biznesie</h1>
+    <div class="business-details" id="business-details">
+      <div class="business-inline">
+        <div>
+          <h2>Nazwa:</h2>
+          <p id="business-name"></p>
+        </div>
+        <div>
+          <h2>Dziedzina:</h2>
+          <p id="business-industry"></p>
+        </div>
+        <div>
+          <h2>Słowa kluczowe:</h2>
+          <p id="business-keywords"></p>
+        </div>
+      </div>
+      <div class="business-item business-description">
+        <h2>Opis:</h2>
+        <p id="business-description"></p>
+      </div>
+      <div class="business-stats">
+        <div>
+          <h2>Prognozowane ryzyko:</h2>
+          <p id="business-risk"></p>
+        </div>
+        <div>
+          <h2>Prognozowany zysk:</h2>
+          <p id="business-profit"></p>
+        </div>
+        <div>
+          <h2>Procent udziałów:</h2>
+          <p id="business-share-percentage"></p>
+        </div>
+        <div>
+          <h2>Cena udziałów:</h2>
+          <p id="business-share-price"></p>
+        </div>
+      </div>
+    </div>
+    <h1>Proponowani studenci do projektu:</h1>
+    <div class="recommended-students-for-business">
+      </div>
+    <h1>Proponowani inwestorzy do projektu:</h1>    
+    <div class="recommended-investors-for-business">
+    </div>
+    <script type="module" src="scripts/show-students-for-business.js"></script>
+    <h1>Studenci, których wybrałeś:</h1>
+
+  <button id="addCardButton" class="add-card-button">+</button>
+
+    <div id="cardsContainer" class="cards-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Lidia Konasiuk</div>
+          <div class="position">MA degree in Applied Linguistics, Interpreting, French and English for study program S2-PRK-LS-2</div>
+          <div class="nationality">Promotor: dr Eryk Stachurski</div>
+          <div class="club">University: UW</div>
+          <div>Specialization: Master thesis</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Kierunkowosc i gesty tlumacza w tlumaczeniu konsekutywnym dialogowym</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>Keywords: Marketingowiec, marketer, marketing, media, marketing cyfrowy, marketing danych, rewolucja cyfrowa, sztuczna inteligencja (AI), trendy i strategie marketingowe</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Sylwia Spodobalska</div>
+          <div class="position">MA degree in Applied Linguistics, Interpreting, Spanish and English for study program S2-PRK-LS-2</div>
+          <div class="nationality">Promotor: dr Wojciech Figiel</div>
+          <div class="club">University: UW</div>
+          <div>Specialization: Master thesis</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Przeklad ustny a ksztalcenie muzyczne na przykladzie niewidomych tlumaczy ustnych</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>Keywords: inwentaryzacja szczególów architektonicznych, skanowanie laserowe, fotogrametria cyfrowa</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Aleksandra Gutowska</div>
+          <div class="position">Inzynieria geoprzestrzenna for study program WIGIXCSM</div>
+          <div class="nationality">Promotor: dr hab. inz. Ireneusz Ewiak</div>
+          <div class="club">University: WAT</div>
+          <div>Specialization: Master thesis</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Fotogrametryczna detekcja zmian linii brzegowej cieku wodnego w aspekcie oceny jego stanu prawnego.</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>Keywords: EGiB – Ewidencja Gruntów i Budynków</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Szablon nowej karty (ukryty na starcie) -->
+    <div id="newCardTemplate" class=" new-card">
+        <div class="card-header">
+            <div>
+                <input type="text" class="player-name-input" placeholder="Imię i nazwisko">
+                <input type="number" class="card-rating-input" placeholder="Rating">
+            </div>
+        </div>
+        <div class="card-body">
+            <input type="text" class="position-input" placeholder="Pozycja">
+            <input type="text" class="nationality-input" placeholder="Narodowość">
+            <input type="text" class="club-input" placeholder="Klub">
+        </div>
+        <div class="card-footer">
+            <div>
+                <input type="number" placeholder="PACE" class="pace">
+                <input type="number" placeholder="SHOOTING" class="shooting">
+                <input type="number" placeholder="PASSING" class="passing">
+                <input type="number" placeholder="DRIBBLING" class="dribbling">
+                <input type="number" placeholder="DEFENDING" class="defending">
+                <input type="number" placeholder="PHYSICAL" class="physical">
+            </div>
+        </div>
+        <button class="save-card-button">Zapisz</button>
+    </div>
+    <h1>Twoi inwestorzy:</h1>
+
+  <button id="addCardButton" class="add-card-button">+</button>
+
+    <div id="cardsContainer" class="cards-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Jan Kowalski</div>
+          <div class="position">Polska</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Minimalny zysk: 10</div>
+            <div class="card-rating">Maksymalne ryzyko: 20</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>Email: jan.kowalski@example.com</div>
+            <div>Numer telefonu: +48123456789</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Anna Nowak</div>
+          <div class="position">Polska</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Minimalny zysk: 12</div>
+            <div class="card-rating">Maksymalne ryzyko: 15</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>Email: anna.nowak@example.com</div>
+            <div>Numer telefonu: +48111222333</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Szablon nowej karty (ukryty na starcie) -->
+    <div id="newCardTemplate" class=" new-card">
+        <div class="card-header">
+            <div>
+                <input type="text" class="player-name-input" placeholder="Imię i nazwisko">
+                <input type="number" class="card-rating-input" placeholder="Rating">
+            </div>
+        </div>
+        <div class="card-body">
+            <input type="text" class="position-input" placeholder="Pozycja">
+            <input type="text" class="nationality-input" placeholder="Narodowość">
+            <input type="text" class="club-input" placeholder="Klub">
+        </div>
+        <div class="card-footer">
+            <div>
+                <input type="number" placeholder="PACE" class="pace">
+                <input type="number" placeholder="SHOOTING" class="shooting">
+                <input type="number" placeholder="PASSING" class="passing">
+                <input type="number" placeholder="DRIBBLING" class="dribbling">
+                <input type="number" placeholder="DEFENDING" class="defending">
+                <input type="number" placeholder="PHYSICAL" class="physical">
+            </div>
+        </div>
+        <button class="save-card-button">Zapisz</button>
+    </div>
   </body>
 </html>

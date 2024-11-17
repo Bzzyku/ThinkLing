@@ -1,3 +1,7 @@
+
+export function addingCard (){
+
+
 document.getElementById('addCardButton').addEventListener('click', function () {
   // Pobierz szablon nowej karty
   const newCardTemplate = document.getElementById('newCardTemplate');
@@ -62,4 +66,4 @@ document.getElementById('addCardButton').addEventListener('click', function () {
 
   // Dodaj nową kartę do kontenera
   document.getElementById('cardsContainer').appendChild(newCard);
-});
+})};

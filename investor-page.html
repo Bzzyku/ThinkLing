@@ -5,6 +5,30 @@
       investor-page
     </title>
     <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/pages/student-page.css">
+    <style>
+      /* Inline styling for demonstration, move to your CSS file */
+      .business-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Add spacing between items */
+      }
+      .business-inline h2, .business-inline p {
+        margin: 0;
+      }
+      .business-item {
+        margin-bottom: 10px;
+      }
+      .business-description {
+        margin-top: 20px;
+      }
+      .business-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Add spacing between items */
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="header">
@@ -20,8 +44,137 @@
         <img src="images/notifications.svg">
       </div>
     </div>
-    <h1>
-      Investor
-    </h1>
+    <h1>Profil Inwestora</h1>
+    <div class="business-details" id="business-details">
+      <div class="business-inline">
+        <div>
+          <h2>Imie:</h2>
+          <p id="investor-name"></p>
+        </div>
+        <div>
+          <h2>Nazwisko:</h2>
+          <p id="investor-lastname"></p>
+        </div>
+        <div>
+          <h2>Kraj:</h2>
+          <p id="investor-country"></p>
+        </div>
+      </div>
+      <div class="business-stats">
+        <div>
+          <h2>Maksymalne ryzyko:</h2>
+          <p id="investor-risk"></p>
+        </div>
+        <div>
+          <h2>Minimalny zysk:</h2>
+          <p id="investor-profit"></p>
+        </div>
+        <div>
+          <h2>Email:</h2>
+          <p id="investor-email"></p>
+        </div>
+        <div>
+          <h2>Numer telefonu:</h2>
+          <p id="investor-phone"></p>
+        </div>
+      </div>
+    </div>
+    <h1>Proponowane biznesy do inwestycji:</h1>
+    <div class="recommended-businesses-for-investor">
+    </div>
+
+    <h1>Biznesy, w które inwestujesz:</h1>
+
+  <button id="addCardButton" class="add-card-button">+</button>
+
+    <div id="cardsContainer" class="cards-container">
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Tech Innovations</div>
+          <div class="position">Technology</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Szacowany zysk: 25%</div>
+            <div class="card-rating">Szacowane ryzyko: 15.5%</div>
+            <div class="card-rating">Procent udziału: 10%</div>
+            <div class="card-rating">Cena udziału: 5000</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>tech, software, innovation</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Green Earth Co.</div>
+          <div class="position">Environment</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Szacowany zysk: 18.5%</div>
+            <div class="card-rating">Szacowane ryzyko: 10%</div>
+            <div class="card-rating">Procent udziału: 15%</div>
+            <div class="card-rating">Cena udziału: 3000</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>green, eco, sustainable</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="player-name">Healthy Eats</div>
+          <div class="position">Food</div>
+        </div>
+        <div class="card-body">
+          <div class="player-info">
+            <div class="card-rating">Szacowany zysk: 10.75%</div>
+            <div class="card-rating">Szacowane ryzyko: 5.25%</div>
+            <div class="card-rating">Procent udziału: 20%</div>
+            <div class="card-rating">Cena udziału: 2000</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="card-statistics">
+            <div>health, organic, food</div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Szablon nowej karty (ukryty na starcie) -->
+    <div id="newCardTemplate" class=" new-card">
+        <div class="card-header">
+            <div>
+                <input type="text" class="player-name-input" placeholder="Imię i nazwisko">
+                <input type="number" class="card-rating-input" placeholder="Rating">
+            </div>
+        </div>
+        <div class="card-body">
+            <input type="text" class="position-input" placeholder="Pozycja">
+            <input type="text" class="nationality-input" placeholder="Narodowość">
+            <input type="text" class="club-input" placeholder="Klub">
+        </div>
+        <div class="card-footer">
+            <div>
+                <input type="number" placeholder="PACE" class="pace">
+                <input type="number" placeholder="SHOOTING" class="shooting">
+                <input type="number" placeholder="PASSING" class="passing">
+                <input type="number" placeholder="DRIBBLING" class="dribbling">
+                <input type="number" placeholder="DEFENDING" class="defending">
+                <input type="number" placeholder="PHYSICAL" class="physical">
+            </div>
+        </div>
+        <button class="save-card-button">Zapisz</button>
+    </div>
+    <script type="module" src="scripts/show-businesses-for-investor.js"></script>
   </body>
 </html>

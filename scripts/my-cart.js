@@ -15,7 +15,7 @@ document.getElementById('toggleCardButton').addEventListener('click',  () => {
 
 
 
-document.getElementById('editCardButton').addEventListener('click', function () {
+/*document.getElementById('editCardButton').addEventListener('click', function () {
   const editableElements = document.querySelectorAll('[data-editable]');
   const isEditing = this.textContent === 'Edytuj';
 
@@ -40,3 +40,4 @@ document.getElementById('editCardButton').addEventListener('click', function () 
   // Przełącz tekst na przycisku
   this.textContent = isEditing ? 'Zapisz' : 'Edytuj';
 });
+*/
